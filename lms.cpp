@@ -401,6 +401,7 @@ void deleteBookRecord() {
 
 void adminMenu() {
     int choice;
+    string admno, bno;
     do {
         system("cls");
         cout << "\nADMINISTRATOR MENU";
@@ -416,37 +417,42 @@ void adminMenu() {
         cout << "\n10. DELETE BOOK RECORD";
         cout << "\n11. BACK TO MAIN MENU";
         cout << "\nPlease Enter Your Choice (1-11): ";
+        
         cin >> choice;
         switch (choice) {
             case 1:
                 writeStudent();
                 break;
             case 2:
-                // Function to display all student records
+                displayAllStudents();
                 break;
             case 3:
-                // Function to display specific student record
+                cout << "\nEnter the Admission Number to display: ";
+                cin >> admno;
+                displaySpecificStudent(admno);
                 break;
             case 4:
                 modifyStudentRecord();
                 break;
             case 5:
-                // Function to delete student record
+                deleteStudentRecord();
                 break;
             case 6:
                 writeBook();
                 break;
             case 7:
-                // Function to display all book records
+                displayAllBooks();
                 break;
             case 8:
-                // Function to display specific book record
+                cout << "\nEnter the Book Number to display: ";
+                cin >> bno;
+                displaySpecificBook(bno);
                 break;
             case 9:
                 modifyBookRecord();
                 break;
             case 10:
-                // Function to delete book record
+                deleteBookRecord();
                 break;
             case 11:
                 return;
